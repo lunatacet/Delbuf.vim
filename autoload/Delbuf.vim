@@ -8,13 +8,18 @@ fu! Delbuf#Delbuf(s) abort
     let w = winnr()
     let b = bufnr()
     tabdo call add(l, [tabpagenr(), winnr()])
-    if len(getbufinfo({'buflisted': 1})) == 1
-        ene
-        b #
-    en
-    tabdo windo if bufnr() == b | bn | en
-    exe a:s b
-    tabdo for i in l | exe i[0] .. 'tabn' | exe i[1] .. 'wincmd w' | endfor
-    exe t .. 'tabn'
-    exe w .. 'wincmd w'
+    try
+        if len(getbufinfo({'buflisted': 1})) == 1
+            ene
+            b #
+        en
+        tabdo windo if bufnr() == b | bn | en
+        exe a:s b
+    catch
+        echoerr v:exception
+    finally
+        tabdo for i in l | exe i[0] .. 'tabn' | exe i[1] .. 'wincmd w' | endfor
+        exe t .. 'tabn'
+        exe w .. 'wincmd w'
+    endt
 endf
