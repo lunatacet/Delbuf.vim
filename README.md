@@ -12,7 +12,9 @@ Plug 'lunatacet/Delbuf.vim'
 
 `<Leader>d` to delete the buffer displayed in the currently active window (even if the buffer is modified, ie like `:bd!`).
 
-This default mapping is defined as:
+## Details
+
+The default mapping is defined as:
 
 ```
 nnoremap <Leader>d <Cmd>call Delbuf#Delbuf('bd!')<CR>
