@@ -1,1 +1,1 @@
-nnoremap <Leader>d <Cmd>call Delbuf#Delbuf()<CR>
+nnoremap <Leader>d <Cmd>call Delbuf#Delbuf('bd!')<CR>
