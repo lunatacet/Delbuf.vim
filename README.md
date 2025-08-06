@@ -1,6 +1,6 @@
 ## Introduction
 
-In Vim, deleting active buffers leads to windows and tabs automatically closing - Delbuf.vim helps manoeuvre around this.
+In Vim, deleting active buffers leads to associated windows and tabs being automatically closed - Delbuf.vim helps manoeuvre around this.
 
 ## Installation
 
